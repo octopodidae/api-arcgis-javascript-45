@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  	<meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no" />
+	<title>ArcGIS JS API</title>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://js.arcgis.com/4.5/esri/themes/light/main.css">
+	<link rel="stylesheet" href="./style.css">
+	<script src="https://js.arcgis.com/4.5"></script>
+</head>
+<body>
+	<div class="container">
+		<nav class="nav">
+		  <a class="nav-link active" href="#">Link1</a>
+		  <a class="nav-link" href="#">Link2</a>
+		  <a class="nav-link" href="#">Link3</a>
+		  <a class="nav-link disabled" href="#">Link4</a>
+		</nav>
+		<div id="mapview">
+			<input type="button" class="btn btn-info" id="intialExtent" value="Go to initial extent">
+		</div> <!-- the map -->
+		<br>
+		<p id="basemapChbox"><input type="checkbox" class="form-check-input" id="basemapCheckbox"><label for="basemapCheckbox">&nbsp&nbspChange basemap</label></p>
+		<div id="basemapsDiv">
+			<div id="myList">
+				<form>
+					<div class="form-group">
+						<select class="form-control list" id="basemapList">
+						  	<option value="osm">OSM</option>
+						  	<option value="topo">Topo</option>
+							<option value="streets">Streets</option>
+							<option value="satellite">Satellite</option>
+							<option value="hybrid">Hybrid</option>
+							<option value="gray">Gray</option>
+							<option value="dark-gray" selected="selected">Dark gray</option>
+							<option value="streets-night-vector">Streets night vector</option>
+						</select>
+					</div>
+				</form>
+			</div>	
+		<div id="btnsDiv">
+				<button class="btn btn-info basemapBtn" id="osm">OSM</button>
+				<button class="btn btn-info basemapBtn" id="topo">Topo</button>
+				<button class="btn btn-info basemapBtn" id="streets">Street</button>
+				<button class="btn btn-info basemapBtn" id="satellite">Satellite</button>
+				<button class="btn btn-info basemapBtn" id="hybrid">Hybrid</button>
+				<button class="btn btn-info basemapBtn" id="gray">Gray</button>
+				<button class="btn btn-info basemapBtn" id="dark-gray">Dark Gray</button>
+				<button class="btn btn-info basemapBtn" id="streets-night-vector">Streets night vector</button>
+			</div>
+		</div>	<!-- END #basemaps -->
+		<br>
+		<select name="agsServers" id="agsServers" class="form-control list">
+			<option value="capgeo.sig.paris.fr" url="https://capgeo.sig.paris.fr/arcgis/rest/services">capgeo.sig.paris.fr</option>
+			<option url="https://sampleserver6.arcgisonline.com/arcgis/rest/services" value="sampleserver6.arcgisonline.com">sampleserver6.arcgisonline.com</option>
+      <option value="maps5.arcgisonline.com" url="https://maps5.arcgisonline.com/arcgis/rest/services">maps5.arcgisonline.com</option>
+			<option url="https://bidon.com/arcgis/rest/services" value="bidon.com">bidon.com</option>
+		</select>
+		<button class="btn btn-info" id="loadServicesBtn">Load services</button><span id="errorSpan" class="alert alert-danger" role="alert"></span>
+		<div id="agsServices"  class="form-group"></div> 
+		<div id="toc"></div>
+	</div> <!-- END CONTAINER -->
+	<script src="./myscript.js"></script>
+  </body>
+</html>
